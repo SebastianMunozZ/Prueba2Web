@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //Tienda
+        $('#tienda').click(function(){
+          $('#central').load('inc/tienda.html');
+        });
+        //Nosotros
+        $('#nosotros').on('click', function(){
+          $('#central').load('inc/nosotros.html');
+          return false;
+        });
+        //Donaciones
+        $('#donaciones').on('click', function(){
+          $('#central').load('inc/donaciones.html');
+          return false;
+        });
+        //Contacto
+        $('#contacto').on('click', function(){
+          $('#central').load('inc/contacto.html');
+          return false;
+        });
+        $('#miCuenta').click(function(){
+          $('#infoMiCuenta').fadeIn();
+          return true;
+        });
+      });
+    </script> 
+       
+    <title>Little Pet Shop</title>
+  </head>
+
+  <body style="background-color:#98ff96">
+    <header class="navbar_color">
+      <nav class="navbar navbar-expand-sm">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item" >
+              <a id = "inicio" class="nav-link color_letras" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item ">
+              <a id="nosotros"class="nav-link color_letras"  href="#">Nosotros</a>
+            </li>
+            <li class="nav-item ">
+              <a id = "tienda" class="nav-link color_letras" href="#">Tienda</a>
+            </li>
+            <li class="nav-item ">
+              <a id = "donaciones"class="nav-link color_letras" href="#">Donaciones</a>
+            </li>
+            <li class="nav-item ">
+              <a id = "contacto" class="nav-link color_letras" href="#">Contacto</a>
+            </li>
+            
+          <li class="nav-item dropdown  " >
+            <a id="miCuenta" class="nav-link dropdown-toggle color_letras" href="#" role="button" data-bs-toggle="dropdown">Mi cuenta</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Iniciar sesion</a></li>
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Opciones</a></li>
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Registrarse</a></li>
+            </ul>
+          </li></ul></div>
+      </nav>
+    </header> 
+    
+    <div id="central">
+      <div id="centralContent">
+        <br>
+        <h5 class="texto">Little Pet Shop</h5>
+        <p class="texto">En Little Pet Shop nos especializamos en los productos y juguetes que las mascotas necesitan... Ven y conocenos.</p>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="img/nosotros.html">
+                    <img src="img/nosotros23.jpg" class="d-block w-100; carrusel" alt="nosotros.html">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="letras_carrusel">Nosotros</h5>
+                      <p class="letras_carrusel">Entérate de quienes somos!</p>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="img/tienda.html">
+                    <img src="img/tienda_mascota.jpg" class="d-block w-100; carrusel" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="letras_carrusel">Tienda</h5>
+                      <p class="letras_carrusel">Deleitate con nuestros productos.</p>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="img/donaciones.html">
+                    <img src="img/donacion.jpg" class="d-block w-100; carrusel" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="letras_carrusel">Donaciones</h5>
+                      <p class="letras_carrusel">Apoya alguna de nuestras organizaciones sin fines de lucro</p>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="img/contacto.html">
+                    <img src="img/contacto.jpeg" class="d-block w-100; carrusel" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="letras_carrusel">Contacto</h5>
+                      <p class="letras_carrusel">Si te interesa ayudarnos, dejanos tus datos.</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <footer class="footer">
+      <div class="footer-container pie">
+		    <p>Little Pet Shop @ 2022. Todos los derechos reservados.</p>
+      </div>
+	  </footer>
+
+
+
+
+  </body>
+</html>

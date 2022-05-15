@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+  <header>
+    
+  </header>
+  
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //Validación Nombre
+        $('#Nombre').blur(function(){
+          if(tenercontenido($('#Nombre').val())==false){
+            $('#mensajeNombre').fadeIn();
+          }else{
+            $('#mensajeNombre').fadeOut();
+          }
+        });
+        //Validación Apellido
+        $('#Apellidos').blur(function(){
+          if(tenercontenido($('#Apellidos').val())==false){
+            $('#mensajeApellido').fadeIn();
+          }else{
+            $('#mensajeApellido').fadeOut();
+          }
+        });
+        //Validación Correo 
+        $('#correo').blur(function(){
+          if(correo($('#correo').val())==false){
+            $('#mensajeCorreo').fadeIn();
+          }else{
+            $('#mensajeCorreo').fadeOut();
+          }
+        });
+        //Validación Telefono 
+        $('#Telefono').blur(function(){
+          if(validarfono($('#Telefono').val())==false){
+            $('#mensajeTelefono').fadeIn();
+          }else{
+            $('#mensajeTelefono').fadeOut();
+          }
+        });
+        $('#bEnviar').click(function(){
+          if(tenercontenido($('#Nombre').val())==true && tenercontenido($('#Apellidos').val())==true && correo($('#correo').val())==true && validarfono($('#Telefono').val())==true){
+            alert("Información enviada correctamente.")
+            return true;
+          }else{
+            return false;
+          }
+        });
+      });
+    </script> 
+    <title>Contactanos</title>
+
+  </head>
+
+  <body style="background-color:#98ff96"> >
+    <br>
+    <h5 class="texto">Sección de Contacto</h5>
+    <p class="texto">Ingresa tus datos y un miembro de nuestro equipo se contactará contigo a la brevedad.</p>
+    <br>
+    <div class="container">
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="Nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="Nombre" placeholder="Juan">
+          <div id="mensajeNombre" class="errores">Ingresa un nombre</div>
+        </div>
+        <div class="col-md-4">
+          <label for="Apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="Apellidos" placeholder="Pérez">
+          <div id="mensajeApellido" class="errores">Ingresa un apellido</div>
+        </div>
+        <div class="col-md-4">
+          <label for="Telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="Telefono" placeholder="+56912345678" >
+            <div id="mensajeTelefono" class="errores">Formato no valido, revisa el número</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault03" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.cl" >
+          <div id="mensajeCorreo" class="errorCorreo">Ingresa un correo valido</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">Región</label>
+          <div id="region">
+            <select class="form-select" id="validationDefault04" >
+              <option selected disabled value="">Elige tu región</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">Comuna</label>
+          <div id="comunas">
+            <select class="form-select" id="validationDefault04" >
+              <option selected disabled value="">Elige tu comuna</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Acepto el uso de estos datos para que me contacten.
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button id= "bEnviar" class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+  </div>
+  <br>
+  </body>
+</html>
+<script>
+  const validarrut= (rut)=>{
+    let run = rut.replace(/ /g,'').replace(/\./g,'').replace('K','k')
+    run = run.split('-')
+    let factor = [2,3,4,5,6,7,2,3,4,5,6]
+    let sum = 0
+    let ciclo = 0
+    for(let i=run[0].length;i>0;i--){
+        sum += run[0][i-1]*factor[ciclo];ciclo++
+    }
+    sum = (11-sum%11)+''
+    if(sum=='10'){sum='k'}
+    if(sum==run[1]){
+        return run[0]+'-'+run[1]
+    }else{
+        return false
+    }
+    
+}
+
+const tenercontenido = (value)=>{
+    if(value==undefined){
+        return false
+    }else if(value ==''){
+        return false
+    }else if(value.length===0){
+        return false
+    }else{
+        return true
+    }
+    //console.log(value, typeof value)
+}
+
+
+const correo = (email)=>{
+    //console.log(email.substr(-5))
+    if(email.indexOf(' ')!==-1){
+        return false;
+    }else if(email.indexOf('@')===-1){
+        return false;
+    }else if(email.substr(-5).indexOf('.')===-1){
+        return false;
+    }else{
+        return true
+    }
+}
+
+//Devuelve la hora en formato texto. Offset es GMT (-4 hora chile invierno) y tipo es 1 para devolver fecha y hora y 2 para solo hora
+const calcTime =(offset,tipo)=>{
+            let d = new Date();
+            let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+            let nd = new Date(utc + (3600000*offset));
+            // console.log(nd.toLocaleString())
+            // console.log(nd.toLocaleString().substring(11,19))
+            let inicia = 0
+            if(tipo==2){inicia = 11}
+            return nd.toLocaleString().substring(inicia,19)
+        }
+
+const validarfono = (fono)=>{
+    const solonum = (data)=>{
+        let ok = true
+        let numbers = ['0','1','2','3','4','5','6','7','8','9']
+        for(let i=1;i<data.length;i++){
+            if(numbers.indexOf(data.charAt(i))===-1){
+                ok = false
+            }
+        }
+        return ok
+    }
+
+    if(fono.length!== 12){
+        return false
+    }else if(fono.charAt(0)!=='+'){
+        return false
+    }else if(!solonum(fono)){
+        return false
+    }else{
+        return true
+    }
+}
+//<script src="../js/validadores.js">
+  //console.log('hola!')
+  console.log(162,validarfono('+56971081496'))
+  let regiones = []
+  let comunas = []
+  fetch('https://apis.digital.gob.cl/dpa/regiones/')
+  .then(response => response.json())
+  .then((data) =>{ //console.log(data)
+      let options = data.map((item)=>{return `<option value="${item.nombre}">${item.nombre}</option>`})
+      options = options.join('')
+      //console.log(options)
+      let select = `<select class="form-select" id="validationDefault04" onchange='setcomunas(this.value)' name="cars" id="cars" form="carform"><option selected disabled value="">Elige tu región</option>${options}</select>`
+      //console.log('cargada regiones')
+      document.getElementById('region').innerHTML = select
+      //console.log('regiones cargadas')
+      regiones = data
+  });
+
+  fetch(`https://apis.digital.gob.cl/dpa/comunas`)
+  .then(response => response.json())
+  .then((data) =>{ //console.log(data)
+      //console.log('cargadas comuna')
+      comunas = data
+  });
+
+  const setcomunas = (region)=>{
+      //console.log(region,regiones)
+      let id
+      for(let i=0;i<regiones.length;i++){
+          if(region===regiones[i].nombre){
+              id = regiones[i].codigo
+              break
+          }
+      }
+      let data = []
+      for(let i=0;i<comunas.length;i++){
+          let cod = comunas[i].codigo
+          //console.log(id)
+          if(id===comunas[i].codigo.substr(0,2)){
+              data.push(comunas[i])
+          }
+      }
+      //console.log(data)
+      //data = data.join('')
+      let options = data.map((item)=>{return `<option value="${item.nombre}">${item.nombre}</option>`})
+      options = options.join('')
+      //console.log(options)
+      let select = `<select class="form-select" id="validationDefault04" name="cars" id="cars" form="carform">${options}</select>`
+      document.getElementById('comunas').innerHTML = select
+  }
+  
+
+</script>
+
