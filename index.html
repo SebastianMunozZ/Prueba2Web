@@ -9,15 +9,57 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Tienda-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#tienda').click(function(){
+          $('#central').load('inc/tienda.html');
+        });
+      });
+      </script> 
+       <!-- Tienda-->
+
+        <!-- Nosotros-->
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript">
       $(document).ready(function() {
-        $('#div-btn1').on('click', function(){
+        $('#nosotros').on('click', function(){
           $('#central').load('inc/nosotros.html');
           return false;
         })
-      })
-    </script>
+      })</script>
+      <!-- Nosotros-->
+
+      <!-- Donaciones-->
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#donaciones').on('click', function(){
+          $('#central').load('inc/donaciones.html');
+          return false;
+        })
+      })</script>
+      <!-- Donaciones -->
+
+       <!-- contacto-->
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#contacto').on('click', function(){
+          $('#central').load('inc/contacto.html');
+          return false;
+        })
+      })</script>
+      <!-- contacto -->
+
+
+
+    <!-- JQuery -->
+
+
+
     
     <title>Little Pet Shop</title>
   </head>
@@ -28,19 +70,19 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav me-auto">
             <li class="nav-item" >
-              <a class="nav-link color_letras" href="inicio.html">Inicio</a>
+              <a id = "inicio" class="nav-link color_letras" href="index.html">Inicio</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link color_letras" id="div-btn1" href="#">Nosotros</a>
+              <a id="nosotros"class="nav-link color_letras"  href="#">Nosotros</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link color_letras" href="inc/tienda.html">Tienda</a>
+              <a id = "tienda" class="nav-link color_letras" href="#">Tienda</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link color_letras" href="inc/donaciones.html">Donaciones</a>
+              <a id = "donaciones"class="nav-link color_letras" href="#">Donaciones</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link color_letras" href="inc/contacto.html">Contacto</a>
+              <a id = "contacto" class="nav-link color_letras" href="#">Contacto</a>
             </li>
             
           <li class="nav-item dropdown  " >
@@ -125,6 +167,7 @@
         <br>
       </div>
     </div>
+    <br>
     <footer class="footer">
       <div class="footer-container pie">
 		    <p>Little Pet Shop @ 2022. Todos los derechos reservados.</p>
