@@ -9,58 +9,59 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
     
-    <!-- Tienda-->
 
     <script type="text/javascript">
       $(document).ready(function(){
+        //enlaces navbar
+        //Tienda
         $('#tienda').click(function(){
           $('#central').load('inc/tienda.html');
         });
-      });
-      </script> 
-       <!-- Tienda-->
-
-        <!-- Nosotros-->
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript">
-      $(document).ready(function() {
+        //Nosotros
         $('#nosotros').on('click', function(){
           $('#central').load('inc/nosotros.html');
           return false;
-        })
-      })</script>
-      <!-- Nosotros-->
-
-      <!-- Donaciones-->
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript">
-      $(document).ready(function() {
+        });
+        //Donaciones
         $('#donaciones').on('click', function(){
           $('#central').load('inc/donaciones.html');
           return false;
-        })
-      })</script>
-      <!-- Donaciones -->
-
-       <!-- contacto-->
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript">
-      $(document).ready(function() {
+        });
+        //Contacto
         $('#contacto').on('click', function(){
           $('#central').load('inc/contacto.html');
           return false;
-        })
-      })</script>
-      <!-- contacto -->
-
-
-
-    <!-- JQuery -->
-
-
-
-    
+        });
+        $('#miCuenta').click(function(){
+          $('#infoMiCuenta').fadeIn();
+          return true;
+        });
+        //enlaces carrusel
+        //Tienda
+        $('#nosotrosCarrusel').click(function(){
+          $('#central').load('inc/nosotros.html');
+        });
+        //Nosotros
+        $('#tiendaCarrusel').on('click', function(){
+          $('#central').load('inc/tienda.html');
+          return false;
+        });
+        //Donaciones
+        $('#donacionCarrusel').on('click', function(){
+          $('#central').load('inc/donaciones.html');
+          return false;
+        });
+        //Contacto
+        $('#contactoCarrusel').on('click', function(){
+          $('#central').load('inc/contacto.html');
+          return false;
+        });
+      });
+    </script> 
+       
     <title>Little Pet Shop</title>
   </head>
 
@@ -86,11 +87,11 @@
             </li>
             
           <li class="nav-item dropdown  " >
-            <a class="nav-link dropdown-toggle color_letras" href="#" role="button" data-bs-toggle="dropdown">Mi cuenta</a>
+            <a id="miCuenta" class="nav-link dropdown-toggle color_letras" href="#" role="button" data-bs-toggle="dropdown">Mi cuenta</a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Iniciar sesion</a></li>
-              <li><a class="dropdown-item" href="#">Opciones</a></li>
-              <li><a class="dropdown-item" href="#">Registrarse</a></li>
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Iniciar sesion</a></li>
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Opciones</a></li>
+              <li><a id= "infoMiCuenta" class="dropdown-item" href="#">Registrarse</a></li>
             </ul>
           </li></ul></div>
       </nav>
@@ -115,8 +116,8 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <a href="img/nosotros.html">
-                    <img src="img/nosotros23.jpg" class="d-block w-100; carrusel" alt="nosotros.html">
+                    <a id="nosotrosCarrusel" href="#">
+                    <img src="img/nosotros23.jpg" class="d-block w-100; carrusel; col-12" alt="nosotros.html">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Nosotros</h5>
                       <p class="letras_carrusel">Entérate de quienes somos!</p>
@@ -124,8 +125,8 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/tienda.html">
-                    <img src="img/tienda_mascota.jpg" class="d-block w-100; carrusel" alt="...">
+                    <a id="tiendaCarrusel" href="#">
+                    <img src="img/tienda_mascota.jpg" class="d-block w-100; carrusel; col-12" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Tienda</h5>
                       <p class="letras_carrusel">Deleitate con nuestros productos.</p>
@@ -133,8 +134,8 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/donaciones.html">
-                    <img src="img/donacion.jpg" class="d-block w-100; carrusel" alt="...">
+                    <a id="donacionCarrusel" href="#">
+                    <img src="img/donacion.jpg" class="d-block w-100; carrusel; col-12" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Donaciones</h5>
                       <p class="letras_carrusel">Apoya alguna de nuestras organizaciones sin fines de lucro</p>
@@ -142,8 +143,8 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/contacto.html">
-                    <img src="img/contacto.jpeg" class="d-block w-100; carrusel" alt="...">
+                    <a id="contactoCarrusel" href="#">
+                    <img src="img/contacto.jpeg" class="d-block w-100; carrusel; col-12" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Contacto</h5>
                       <p class="letras_carrusel">Si te interesa ayudarnos, dejanos tus datos.</p>
