@@ -16,7 +16,7 @@
     */
 }
 .color_letras {
-    color: white; ;
+    color: #f2f0ee ;
 }
 .color_letras:hover{
     color: grey;
@@ -34,10 +34,7 @@
     height: 250px;
     width: 250px;
 }
-.img_donacion_modal {
-    height: 200px;
-    width: 200px;
-}
+
 .alinear_cartas {
     text-align: center;
 }
@@ -54,3 +51,42 @@
     width: 250px;
     border-radius: 50%;
 }
+
+
+ /* card de nosotros */
+
+
+.hcolor{
+    color: #f2f0ee
+    ;
+}
+.modal-content{
+    background-color:#705a56
+    ;
+}
+.card{
+    background-color:#705a56
+    ;
+}
+.modal-header{
+    background-color:#705a56
+    ;
+}
+.img_donacion {
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+.img_donacion_modal{
+    height: 100%;
+    width: 100%;
+}
+.titulo {
+    color: #f2f0ee    ;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+
+}
+
+ /* card de nosotros */
