@@ -15,6 +15,7 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
+        //enlaces navbar
         //Tienda
         $('#tienda').click(function(){
           $('#central').load('inc/tienda.html');
@@ -37,6 +38,26 @@
         $('#miCuenta').click(function(){
           $('#infoMiCuenta').fadeIn();
           return true;
+        });
+        //enlaces carrusel
+        //Tienda
+        $('#nosotrosCarrusel').click(function(){
+          $('#central').load('inc/nosotros.html');
+        });
+        //Nosotros
+        $('#tiendaCarrusel').on('click', function(){
+          $('#central').load('inc/tienda.html');
+          return false;
+        });
+        //Donaciones
+        $('#donacionCarrusel').on('click', function(){
+          $('#central').load('inc/donaciones.html');
+          return false;
+        });
+        //Contacto
+        $('#contactoCarrusel').on('click', function(){
+          $('#central').load('inc/contacto.html');
+          return false;
         });
       });
     </script> 
@@ -95,7 +116,7 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <a href="img/nosotros.html">
+                    <a id="nosotrosCarrusel" href="#">
                     <img src="img/nosotros23.jpg" class="d-block w-100; carrusel" alt="nosotros.html">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Nosotros</h5>
@@ -104,7 +125,7 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/tienda.html">
+                    <a id="tiendaCarrusel" href="#">
                     <img src="img/tienda_mascota.jpg" class="d-block w-100; carrusel" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Tienda</h5>
@@ -113,7 +134,7 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/donaciones.html">
+                    <a id="donacionCarrusel" href="#">
                     <img src="img/donacion.jpg" class="d-block w-100; carrusel" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Donaciones</h5>
@@ -122,7 +143,7 @@
                     </a>
                   </div>
                   <div class="carousel-item">
-                    <a href="img/contacto.html">
+                    <a id="contactoCarrusel" href="#">
                     <img src="img/contacto.jpeg" class="d-block w-100; carrusel" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="letras_carrusel">Contacto</h5>
